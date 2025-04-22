@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Motivational Quote Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0180ff, #e2e8f0);
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      color: #1f2937;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .quote-box {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      max-width: 600px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .quote {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      min-height: 60px;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: #0d6efd;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0b5ed7;
+    }
+
+    a.back-link {
+      margin-top: 2rem;
+      display: inline-block;
+      color: #0d6efd;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✨ Motivational Quote Generator</h1>
+  <div class="quote-box">
+    <div class="quote" id="quote">What are you waiting for? <br> Click below to get some inspiration!</div>
+    <button onclick="newQuote()">Get Quote</button>
+  </div>
+
+  <a class="back-link" href="scratch.html">← Back to More About Me Page</a>
+
+  <script>
+    const quotes = [
+      "Believe you can and you're halfway there. – Theodore Roosevelt",
+      "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+      "Start where you are. Use what you have. Do what you can. – Arthur Ashe",
+      "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+      "The only limit to our realization of tomorrow is our doubts of today. – Franklin D. Roosevelt",
+      "Dream big. Start small. Act now. – Robin Sharma",
+      "You miss 100% of the shots you don’t take. – Wayne Gretzky",
+      "Hardships often prepare ordinary people for an extraordinary destiny. – C.S. Lewis",
+      "You have to believe in yourself when no one else does. - Serena Williams",
+      "Spread love everywhere you go. Let no one ever come without leaving happier. - Mother Teresa",
+      "Some people want it to happen, some wish it would happen, others make it happen. - Michael Jordan",
+      "God doesn’t care nearly as much about where you have been as He does about where you are and, with His help, where you are willing to go. - Jeffrey R. Holland",
+      "The purpose of the gospel is to make bad men good and good men better. - David O. McKay"
+      
+    ];
+
+    function newQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').textContent = quotes[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
